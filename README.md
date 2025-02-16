@@ -33,7 +33,39 @@ Para analizar la información disponible, se utilizaron las herramientas de Exce
 
 En excel se fue analizando la información disponible de forma mensual. Se crearon columnas de duración de los viajes, mes y día. Se utilizaron tablas dinámicas para observar el comportamiento de los miembros anuales y casuales, por día, según el tipo de bicicleta, y promediando los tiempos de viaje. Asimismo, se revisó en Excel la existencia de nulos o valores duplicados.
 
-En SQL se unificaron los 12 archivos mensuales en una sola dataset. Se realizaron consultas para ver los valores totales, si existen valores nulos o duplicados que afecten al análisis. Se modificó el tipo de valor de las columnas de started_at y ended_at para poder crear la columna "ride_length":
+En SQL se unificaron los 12 archivos mensuales en una sola dataset:
+
+```
+CREATE TABLE IF NOT EXISTS `2024_tripdata.all_tripdata` AS 
+(
+  SELECT * FROM '202312_tripdata`
+  UNION ALL
+  SELECT * FROM `202401_tripdata`
+  UNION ALL
+  SELECT * FROM `202402_tripdata`
+  UNION ALL
+  SELECT * FROM `202403_tripdata`
+  UNION ALL
+  SELECT * FROM `202404_tripdata`
+  UNION ALL
+  SELECT * FROM `202405_tripdata`
+  UNION ALL
+  SELECT * FROM `202406_tripdata`
+  UNION ALL
+  SELECT * FROM `202407_tripdata`
+  UNION ALL
+  SELECT * FROM `202408_tripdata`
+  UNION ALL
+  SELECT * FROM `202409_tripdata`
+  UNION ALL
+  SELECT * FROM `202410_tripdata`
+  UNION ALL
+  SELECT * FROM `202411_tripdata`
+);
+```
+
+
+Se realizaron consultas para ver los valores totales, si existen valores nulos o duplicados que afecten al análisis. Se modificó el tipo de valor de las columnas de started_at y ended_at para poder crear la columna "ride_length":
 
 ```
 ALTER TABLE `2024_tripdata.all_tripdata`
