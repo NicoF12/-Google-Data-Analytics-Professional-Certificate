@@ -35,21 +35,28 @@ En excel se fue analizando la información disponible de forma mensual. Se crear
 
 En SQL se unificaron los 12 archivos mensuales en una sola dataset. Se realizaron consultas para ver los valores totales, si existen valores nulos o duplicados que afecten al análisis. Se modificó el tipo de valor de las columnas de started_at y ended_at para poder crear la columna "ride_length":
 
+```
 ALTER TABLE `2024_tripdata.all_tripdata`
 MODIFY COLUMN started_at DATETIME(6);
+```
 
+```
 ALTER TABLE `2024_tripdata.all_tripdata`
 MODIFY COLUMN ended_at DATETIME(6);
+```
 
+```
 UPDATE `2024_tripdata.all_tripdata` 
 SET ride_length =
     CASE
         WHEN started_at <= ended_at THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, started_at, ended_at))
         ELSE SEC_TO_TIME(ABS(TIMESTAMPDIFF(SECOND, started_at, ended_at)))
     END;
+```
 
 Una vez creada la columna y realizado la identificación de los valores nulos y duplicadoss, se creó una nueva tabla incluyendo una columna de día y otra de mes:
 
+```
 CREATE TABLE `2024_tripdata.all_tripdata_clean` AS 
 (
   SELECT 
@@ -81,6 +88,7 @@ CREATE TABLE `2024_tripdata.all_tripdata_clean` AS
     start_station_name, end_station_name, 
     start_lat, start_lng, end_lat, end_lng, member_casual
     FROM `2024_tripdata.all_tripdata`)
+```
 
 Por último, se utilizó PowerBi con la información para visualizar gráficamente el comportamiento de los riders casuales y suscriptos, según el tipo de bicileta, el día y la cantidad de tiempo que duró el viaje.
 
