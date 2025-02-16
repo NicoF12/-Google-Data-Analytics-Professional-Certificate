@@ -94,7 +94,7 @@ CREATE TABLE `2024_tripdata.all_tripdata_clean` AS
   SELECT 
     ride_id, rideable_type, started_at, ended_at, 
     ride_length,
-    CASE EXTRACT(DAY FROM started_at) 
+    CASE DAYOFWEEK(started_at)
       WHEN 1 THEN 'Sun'
       WHEN 2 THEN 'Mon'
       WHEN 3 THEN 'Tue'
@@ -124,7 +124,18 @@ CREATE TABLE `2024_tripdata.all_tripdata_clean` AS
 
 Por último, se utilizó PowerBi con la información para visualizar gráficamente el comportamiento de los riders casuales y suscriptos, según el tipo de bicicleta, el día y la cantidad de tiempo que duró el viaje.
 
-
-
 Resultados:
+La composición de los usuarios esta dividido entre miembros anuales y casuales. El primero representa el xx% del total, mientras que el segundo el xx%. Respecto al tipo de bicicleta utilizada, la clásica es la más popular para ambos grupos.
 
+Por otro lado, se muestra a continuación la composición de la distribución de los viajes en los meses y los días, según el tipo de plan contratado. Se observa que existe mayor utilización de las bicicletas en los meses de primavera y verano, mientras una reducción en invierno. Respecto a los días de semana, se puede observar que los riders casuales utilizan más las bicicletas durante los fines de semana.
+
+En cambio, si se realiza el mismo análisis en las distintas horas del día, los riders anuales sueles utilizar más las bicicletas durante la mañana temprano, o a la tarde, lo que indicaría que son los que se trasladas a hacia y desde sus lugares de trabajo. En cambio, los miembros casuales utilizan las bibicletas principalmente a la tarde, por lo que se puede asumir que su utilización es de ocio.
+
+Es también importante descatar que los miembros casuales son los que utilizan más tiempo seguido las bicicletas, especialmente durante el verano y la primavera, pero son los que las utilizan con menor frecuencia, en relación a los miembros anuales.
+
+Por último, y en relación a la información suministrada de la locación donde inician y terminan los viajes, haciendo una búsqueda rápida en los mapas, se observa que los viajes realizados por los miembros casuales tienden a estar cerca de museos, parques, y playas, reforzando la idea que su utilización es para ocio.
+
+En base a los datos analizados, se presenta la propuesta de marketing para lograr el objetivo que los riders casuales adquieran la membresía anual, con las siguientes 3 ideas:
+1) Campañana de marketing en los meses de primavera y verano
+2) Campaña de marketing en los sitios recreacionales donde hay mayor demanda de riders casuales
+3) Membresía anual diferencial, solo para los fines de semana, donde hay una mayor actividad de los riders casuales.
