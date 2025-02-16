@@ -1,19 +1,3 @@
-# -Google-Data-Analytics-Professional-Certificate
-Case 1: How does a Bike-Share Navigate Speedy Success
-
-Proyecto para el certificado de Google Data Analytics. Caso de estudio: How does a bike-share navigate speedy success?
-
-La tarea es: 
-Cual es la diferencia en la utilización de las bicicletas entre los miembros anuales y los casuales?
-
-Armar un reporte con las siguientes consideraciones:
-1. Un resumen con la tarea
-2. Una descripción de toda la data utilizada
-3. Documentar la limpieza o manipulación de los datos
-4. Resumen del análisis
-5. Visualizaciones y descubrimientos
-6. Tres recomendaciones en base al análisis realizado
-
 Como un data analista Jr de una empresa de alquiler de bicicletas (pedal y eléctricas), tengo que diseñar una estrategia de marketing con la finalidad de lograr que los riders casuales sean miembros anuales.
 Para lograr dicho objetivo, se analiza la información de la empresa para el período diciembre 2023 - noviembre 2024, que contiene las siguientes columnas:
 
