@@ -122,7 +122,7 @@ CREATE TABLE `2024_tripdata.all_tripdata_clean` AS
     FROM `2024_tripdata.all_tripdata`)
 ```
 
-Por último, se utilizó PowerBi con la información para visualizar gráficamente el comportamiento de los riders casuales y suscriptos, según el tipo de bicileta, el día y la cantidad de tiempo que duró el viaje.
+Por último, se utilizó PowerBi con la información para visualizar gráficamente el comportamiento de los riders casuales y suscriptos, según el tipo de bicicleta, el día y la cantidad de tiempo que duró el viaje.
 
 
 
